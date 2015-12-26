@@ -35,7 +35,7 @@ metaheur <- function(gridclassobject, startgrid=0, startnum=1, iterations=10, ta
   # initializations
   predictors <- "knn"
   grid <- gridclassobject
-  fitControl <- trainControl(method="boot", number=2, savePredictions=TRUE)
+  fitControl <- caret::trainControl(method="boot", number=2, savePredictions=TRUE)
   a <- function(x) {factor(unlist(unique(x)))}
   b <- lapply(grid@grid, a)
   reslist <- list()
@@ -249,7 +249,7 @@ histofrun[[u]] <- unlist(a[[2]])
 res <- t(plyr::ldply(histofrun, rbind))
 }
 
-#test <- metaheurcompare(taboolistlength = c(1,3))
+test <- metaheurcompare(taboolistlength = c(1,3))
 
 #' plotsearchpath
 #'
