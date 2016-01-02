@@ -4,10 +4,11 @@
 \alias{metaheur}
 \title{metaheur}
 \usage{
-metaheur(gridclassobject, startgrid = 0, startnum = 1, iterations = 10,
+metaheur(gridclassobject, startgrid = 0, startnum = 1, iterations = 5,
   taboolistlength = 1, initialtemperature = 0.01, tempconst = 0.01,
   reheat = 0.01, nholdout = 1, late = 0, stopcond = 1,
-  stopvalue = 0.95, deltafive = 0.05, verbose = FALSE)
+  stopvalue = 0.95, deltafive = 0.05, verbose = FALSE,
+  predictor = "knn")
 }
 \arguments{
 \item{gridclassobject}{(GridClass) created by setgrid function in preprocomb package}
@@ -16,7 +17,7 @@ metaheur(gridclassobject, startgrid = 0, startnum = 1, iterations = 10,
 
 \item{startnum}{(integer) number of restarts}
 
-\item{iterations}{(integer) number of iterations done for a restart}
+\item{iterations}{(integer) number of iterations done for a restart, default to 5}
 
 \item{taboolistlength}{(integer) number of previous solution that can not be revisited, > 1}
 
@@ -37,14 +38,14 @@ metaheur(gridclassobject, startgrid = 0, startnum = 1, iterations = 10,
 \item{deltafive}{(numeric) convergence criteria for last five iteration, defaults to 0.05}
 
 \item{verbose}{(boolean)}
-}
-\value{
-(list) best combination, history
+
+\item{predictor}{(character) caret name of predictive model, defaults to "knn"}
 }
 \description{
 Metaheuristic optimization of preprocessing combinations
 }
 \examples{
 ## result <- metaheur(examplegrid,verbose=TRUE)
+## getbestheur(result)
 }
 

@@ -2,15 +2,17 @@ Package: metaheur
 Type: Package
 Title: Metaheuristic Optimization Framework for Preprocessing Combinations
 Version: 0.1
-Date: 2015-12-26
+Date: 2016-1-2
 Author: Markus Vattulainen
+Depends: R (>= 2.10)
 Maintainer: Markus Vattulainen <markus.vattulainen@gmail.com>
 Description: Automation of preprocessing often requires computationally costly
     preprocessing combinations. This package helps to find near-best combinations
     faster. Sub heuristics supported are random and grid restarts, taboo list,
-    Simuated Anneling style decreasing propability for accepting inferior solutions
-    and location of previously best solution to be compared to. Metaheur works with
+    decreasing propability for accepting inferior solutions and location of
+    previously best solution candidate is compared to. Metaheur works with
     package preprocomb and takes its GridClass object as input.
 License: GPL-2
 LazyData: TRUE
-Imports: caret, utils, reshape2, ggplot2, preprocomb, plyr
+Imports: utils, reshape2, ggplot2, preprocomb
+Suggests: testthat
