@@ -1,6 +1,4 @@
 
-#' @import ggplot2
-NULL
 
 #' Example grid
 #'

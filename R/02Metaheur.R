@@ -111,7 +111,7 @@ for (k  in gridsequence)
     reheatprobability <- sample(0:1, 1, prob=c(1-reheat, reheat))
     if (reheatprobability==1) {
       if (verbose==TRUE) {cat("Reheating occured.", "\n")}
-      temperatureincrease <- (1-temperature)*runif(1,0,1)
+      temperatureincrease <- (1-temperature)*stats::runif(1,0,1)
       temperature <- temperature + temperatureincrease}
 
     if (verbose==TRUE){cat("Temperature:", temperature, "\n")}

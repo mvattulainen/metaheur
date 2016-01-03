@@ -50,7 +50,7 @@ metaheurcompare <- function(gridclassobject=examplegrid, runs=2, iterations=10, 
 
 plotsearchpath <- function(x){
   data <- reshape2::melt(x)
-  g1 <- ggplot(data, aes(x=Var1, y=value)) + geom_line() + facet_grid(Var2 ~ .) + theme_bw()
+  g1 <- ggplot2::ggplot(data, aes(x=Var1, y=value)) + geom_line() + facet_grid(Var2 ~ .) + theme_bw()
   g1
 }
 
@@ -65,7 +65,7 @@ plotsearchpath <- function(x){
 
 plotdensity <- function(x){
   data <- reshape2::melt(x)
-  g2 <- ggplot(data, aes(x=value)) + geom_density() + facet_grid(Var2 ~ .) + theme_bw()
+  g2 <- ggplot2::ggplot(data, aes(x=value)) + geom_density() + facet_grid(Var2 ~ .) + theme_bw()
   g2
 }
 
