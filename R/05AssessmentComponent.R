@@ -1,10 +1,21 @@
 
+# Get classification accuracies
+# TODO: refactor these near duplicates to one
+
 getfirstassessment <- function(numberofcurrentbest, grid, predictors, nholdout){
   dat <- grid@data[[numberofcurrentbest]]
   dat1 <- data.frame(y=dat@y, x=dat@x)
   s2 <- preprocomb::getprogrammaticprediction(dat1, predictors, nholdout)[1]
   s2 <- apply(s2, 2, mean)
 }
+
+getconsequentassessment <- function(dat1, predictors, nholdout) {
+  r <- preprocomb::getprogrammaticprediction(dat1, predictors, nholdout)[1]
+  r <- apply(r, 2, mean)
+}
+
+
+# Get the data that corresponds the candidate solution from grid
 
 getcandidatedata <- function(grid, candidate_new, returntype){
 
@@ -24,7 +35,4 @@ getcandidatedata <- function(grid, candidate_new, returntype){
 
 }
 
-getconsequentassessment <- function(dat1, predictors, nholdout) {
-  r <- preprocomb::getprogrammaticprediction(dat1, predictors, nholdout)[1]
-  r <- apply(r, 2, mean)
-}
+
