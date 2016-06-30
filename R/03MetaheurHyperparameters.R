@@ -18,11 +18,12 @@ setClass("metaheurhyper", representation(res="matrix", namegrid="list", baseheur
 #' @param nrohyperparams (integer) number of hyperparameters used in random search, between 1 and 5, default to 3
 #' @param nholdout (integer) number of holdout rounds in computing classification accuracies
 #' @param trials (integer) number of trials
+#' @param model (character) caret name of predictive model, defaults to "rpart"
 #' @examples ## result <- metaheurhyper(cores=2, trials=2, iterations=30)
 #' @export
 
 
-metaheurhyper <- function(gridclassobject=examplegrid,  searchtype="grid", nrohyperparams=3, iterations=10, cores=1, nholdout=2, trials=3){
+metaheurhyper <- function(gridclassobject=examplegrid,  searchtype="grid", nrohyperparams=3, iterations=10, cores=1, nholdout=2, trials=3, model="rpart"){
 
   ## CREATING HYPERPARAMETER SPACE
 
@@ -74,7 +75,7 @@ metaheurhyper <- function(gridclassobject=examplegrid,  searchtype="grid", nrohy
 
         a <- metaheur(gridclassobject, iterations=iterations, initialtemperature=newgrid$initialtemperature[u],
                       tempconst=newgrid$tempconst[u], taboolistlength=newgrid$taboolistlength[u], reheat=newgrid$reheat[u],
-                      late=newgrid$late[u], stopcond=1, stopvalue=0.99, cores=cores, nholdout=nholdout)
+                      late=newgrid$late[u], stopcond=1, stopvalue=0.99, cores=cores, nholdout=nholdout, model=model)
 
         baseheurs[[u]] <- a
 

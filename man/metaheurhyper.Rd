@@ -6,7 +6,7 @@
 \usage{
 metaheurhyper(gridclassobject = examplegrid, searchtype = "grid",
   nrohyperparams = 3, iterations = 10, cores = 1, nholdout = 2,
-  trials = 3)
+  trials = 3, model = "rpart")
 }
 \arguments{
 \item{gridclassobject}{(GridClass) created by setgrid function in preprocomb package, defaults to examplegrid}
@@ -22,6 +22,8 @@ metaheurhyper(gridclassobject = examplegrid, searchtype = "grid",
 \item{nholdout}{(integer) number of holdout rounds in computing classification accuracies}
 
 \item{trials}{(integer) number of trials}
+
+\item{model}{(character) caret name of predictive model, defaults to "rpart"}
 }
 \description{
 search for best hyperparameters for metaheuristic optimization

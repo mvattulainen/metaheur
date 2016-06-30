@@ -9,11 +9,11 @@
 examplesearch
 }
 \description{
-An example of metaheuristic search with examplegrid preprocessing combinations. \cr
-Two restarts, each 50 iterations and 10 times repeated holdout validation.
+An example of metaheuristic search with examplegrid. \cr
+50 iterations and 10 times repeated holdout validation.
 }
 \details{
-result <- metaheur(examplegrid, startnum=2, iterations=50, nholdout=10, cores=2) \cr
+examplesearch <- metaheur(examplegrid, iterations=50, nholdout=10, cores=2) \cr
 }
 \keyword{datasets}
 

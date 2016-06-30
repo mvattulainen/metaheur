@@ -10,8 +10,10 @@ plotsearchpath(x)
 \item{x}{(metaheur object or list of metaheurgrid class objects) object to be plotted}
 }
 \description{
-Plots the search path for metaheur() and three scenarios in plotting
-the result of metaheurgrid()
+Plots the search path, i.e. classification accuracy by iteration.
+metaheur class plots (output of metaheur function) can include restarts.
+List of metaheurhyper class objects (output of metaheurhyper function) plot
+includes best, median and worst scenarious.
 }
 \examples{
 plotsearchpath(examplesearch)

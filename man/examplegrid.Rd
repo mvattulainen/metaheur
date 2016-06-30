@@ -10,12 +10,12 @@ examplegrid
 }
 \description{
 An example grid object made of modified Iris-data with package preprocomb. \cr
-To be used with metaheur() or metaheurhyper() functions as an example grid.
+Contains 540 preprocessing combinations and corresponding preprocessed data sets. \cr
+Can be used with metaheur() or metaheurhyper() functions as an example grid.
 }
 \details{
 modifiediris <- droplevels(iris[-c(1:60),]) \cr
 examplegrid <- preprocomb::setgrid(phases=c("scaling", "smoothing", "outliers", "selection", "sampling"), data=modifiediris) \cr
-result <- metaheur(examplegrid) \cr
 }
 \keyword{datasets}
 

@@ -9,13 +9,13 @@
 examplehyperparam
 }
 \description{
-An example result to be plotted with plotsearchpath().
+An example of metaheuristic hyperparameter optimization. Can be plotted
+with plotsearchpath(examplehyperparam).
 }
 \details{
 examplehyperparam <- metaheurgrid(cores=2, trials=10, iterations=50, nholdout=4) \cr
 NOTE: the above uses examplegrid as default grid. Computation time 3,5 hours with \cr
 Intel Celeron 1.4 Ghz, 2 cores \cr
-plotsearchpath(examplehyperparam) \cr
 }
 \keyword{datasets}
 
